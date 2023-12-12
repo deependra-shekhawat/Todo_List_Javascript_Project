@@ -1,0 +1,256 @@
+/* Define root-level CSS variables for consistent color scheme */
+:root {
+    --main-bg: #f0f0f0;
+    --lighter-bg: #54517f;
+    --main-fg: #C9C7E0;
+    --lightgray: #ccc;
+    --darkgray: #555;
+    --whitest: #fff;
+    --accent: #00B9FF;
+    --accent2: #FC615F;
+    --opposite: #BC2849;
+}
+
+/* Styles for the entire body of the webpage */
+body {
+    color: var(--main-fg);
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    font: normal 1.5em 'Source Sans Pro';
+    margin: auto;
+    background: var(--main-bg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Styles for the main content container */
+#content {
+    margin: auto;
+    max-width: 60%;
+    margin-top: 2em;
+
+/* Styles for anchor (link) elements */
+a, a:visited {
+    color: var(--accent2);
+}
+
+/* Hover and active state styles for anchor elements */
+a:hover, a:active {
+    color: var(--whitest);
+}
+
+/* Styles for buttons and elements with the class .bigButton */
+button, .bigButton {
+    outline: none;
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: var(--darkgray); /* Dark grey background */
+    border: 1px solid var(--lightgray);
+    padding: 0.25em;
+    color: var(--whitest); /* White text */
+    font: 95% 'Source Sans Pro', Helvetica, sans-serif;
+    min-width: 5%;
+    width: auto;
+    transition: all 0.15s;
+}
+
+/* Hover state styles for buttons and .bigButton elements */
+button:hover, .bigButton:hover {
+    background: var(--accent2);
+    color: var(--whitest);
+    border-color: var(--accent2);
+    cursor: pointer;
+}
+
+/* Styles for level 1 headings (h1) */
+h1 {
+    color: #00008B; /* Dark blue color */
+    text-align: center;
+    transition: color 0.5s; /* Add transition for color change */
+    position: relative;
+    transition: transform .2s;
+    animation: bouncy 5s linear;
+}
+
+/* Hover state styles for h1 */
+h1:hover {
+    color: #4B0082; /* Vibrant color */
+}
+
+/* Styles for level 2 headings (h2) */
+h2 {
+    color: var(--accent2);
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Styles for h2 anchor elements */
+h2 a {
+    padding-left: 10px;
+}
+
+/* Styles for the main panel container */
+#mainPanel {
+    display: flex;
+    margin: 1.5em, 0, 1em, 0;
+    text-align: center;
+}
+
+/* Styles for input elements within #mainPanel */
+#mainPanel input {
+    flex: 2;
+    outline: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    moz-box-sizing: border-box;
+    background: var(--whitest);
+    border: 1px solid var(--lightgray);
+    padding: 0.5em;
+    margin: 1px 10px 1px 10px;
+    color: var(--darkgray);
+    font: 95% 'Source Sans Pro', Helvetica, sans-serif;
+    height: 2em;
+    max-width: 70%;
+}
+
+/* Focus state styles for #mainPanel input */
+#mainPanel input:focus {
+    box-shadow: 0 0 7px var(--accent);
+}
+
+/* Styles for .bigButton elements */
+.bigButton {
+    min-width: 15%;
+    height: 2em;
+    display: inline;
+    vertical-align: middle;
+    padding-top: 0.2em;
+}
+
+/* Styles for icons within .bigButton elements */
+.bigButton .fas {
+    padding-top: 0.25em;
+}
+
+/* Styles for unordered lists */
+ul {
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+}
+
+/* Styles for list items */
+li {
+    margin: 1em, 0, 1em, 0;
+    padding-bottom: 0;
+    display: flex;
+    padding-top: 10px;
+    border-top: 1px dashed var(--lighter-bg);
+    cursor: default;
+    transition: all 0.15s;
+    color: black; /* Set task list default text color to black */
+}
+
+/* Hover state styles for list items */
+li:hover {
+    transform: scale(1.01);
+    background: rgba(255, 255, 255, 0.021);
+}
+
+/* Hover state styles for paragraph elements within list items */
+li p:hover {
+    color: var(--lighter-bg);
+}
+
+/* Styles for paragraph elements within list items */
+li p {
+    display: inline;
+    flex: 2;
+    padding: 2% 2% 2% 9%;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Styles for icons within list items */
+li i {
+    font-size: 1.5em;
+    padding: 1%;
+    display: inline;
+    vertical-align: middle;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+/* Hover state styles for icons within list items */
+li i:hover {
+    opacity: 1;
+}
+
+/* Style for completed todo text */
+li p.completed {
+    color: #006400; /* Dark green color */
+    text-decoration: line-through; /* Cut the text */
+}
+
+
+/* Styles for the delete button */
+.deleteButton {
+    color: var(--opposite);
+    opacity: 0.7;
+}
+
+/* Keyframe animation for the 'bouncy' effect */
+@keyframes bouncy {
+    0% {
+        top: 0em;
+    }
+    40% {
+        top: 0em;
+    }
+    43% {
+        top: -0.3em;
+    }
+    46% {
+        top: 0em;
+    }
+    48% {
+        top: -0.1em;
+    }
+    50% {
+        top: 0em;
+    }
+    100% {
+        top: 0em;
+    }
+}
+
+/* Media query for smaller screens (max-width: 960px) */
+@media (max-width: 960px) {
+    body {
+        background-size: auto; /* Adjust background size for smaller screens */
+    }
+
+    #content {
+        max-width: 80%; /* Adjust content width for smaller screens */
+    }
+
+    .bigButton {
+        width: 50%; /* Set the width to 50% for the big button */
+        min-width: initial; /* Reset the minimum width */
+        font-size: 80%; /* Reduce the font size to fit the button */
+    }
+}
+
+/* Media query for screens less than 40em width */
+@media (max-width: 40em) {
+    .bigButton .buttonText {
+        display: none; /* Hide the buttonText */
+    }
+
+    .bigButton .fas {
+        margin: 0; /* Remove any margin applied to the fas icon */
+    }
+}

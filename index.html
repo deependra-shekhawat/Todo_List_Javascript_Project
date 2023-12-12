@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Document metadata -->
+    <title>Javascript learning</title>
+    
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+          crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <!-- Main content container -->
+    <div id='content'>
+        <!-- Navigation section -->
+        <div id="navigation">
+            <!-- Main title of the todo list -->
+            <h1>Todo List</h1>
+            
+            <!-- Main panel for action buttons -->
+            <span id='mainPanel'>
+                <!-- Button to toggle all todos -->
+                <div class='bigButton' onclick="handlers.toggleAll()">
+                    <span class="buttonText">Check All</span>
+                    <!-- Font Awesome icon for toggle all button -->
+                    <span class="fas fa-check-double"></span>
+                </div>
+                
+                <!-- Input field for adding new todos -->
+                <input id="addTodoTextInput" type="text"></input>
+                
+                <!-- Button to add a new todo -->
+                <div class='bigButton' onclick="handlers.addTodo()">
+                    <span class="buttonText">Add</span>
+                    <!-- Font Awesome icon for add button -->
+                    <span class="fas fa-plus"></span>
+                </div>
+            </span>
+        </div>
+        
+        <!-- List to display todos, will be dynamically populated -->
+        <ul id='todoList'>
+            <!-- Nested unordered list for individual todo items -->
+            <ul>
+                <!-- List items will be dynamically added here -->
+            </ul>
+        </ul>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src='index.js'></script>
+</body>
+
+</html>
